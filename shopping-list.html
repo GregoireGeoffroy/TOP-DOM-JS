@@ -31,15 +31,42 @@
     </ul>
 
     <script>
-const list = document.querySelector("#list");
-const item = document.querySelector("#item");
-const button = document.querySelector("#button");
+      const list = document.querySelector("#list");
+      const item = document.querySelector("#item");
+      const button = document.querySelector("#button");
 
-button.addEventListener("click", () => {
-    alert("Hello World");
-});
+      button.addEventListener("click", () => {
+          // Store the current value of the input element in a variable
+          const itemValue = item.value;
 
+          // Check if the input is not empty
+          if (itemValue.trim() !== "") {
+              // Create new elements
+              const listItem = document.createElement("li");
+              const itemSpan = document.createElement("span");
+              const deleteButton = document.createElement("button");
 
+              // Set text content
+              itemSpan.textContent = itemValue;
+              deleteButton.textContent = "Delete";
+
+              // Append span and button to the list item
+              listItem.appendChild(itemSpan);
+              listItem.appendChild(deleteButton);
+
+              // Append the list item to the list
+              list.appendChild(listItem);
+
+              // Attach event handler to delete button
+              deleteButton.addEventListener("click", () => {
+                  list.removeChild(listItem);
+              });
+
+              // Clear the input field and focus it
+              item.value = "";
+              item.focus();
+          }
+      });
     </script>
   </body>
 </html>
