@@ -4,7 +4,8 @@ const content = document.createElement("div");
 content.classList.add("content");
 content.textContent = "This is the glorious text-content!";
 
-const paragraph = document.createElement("paragraph");
+// Corrected the tag name to "p"
+const paragraph = document.createElement("p");
 paragraph.classList.add("paragraph");
 paragraph.textContent = "Hey I’m red!";
 paragraph.style.color = "red";
@@ -16,29 +17,26 @@ title3.style.color = "blue";
 
 const newDiv = document.createElement("div");
 newDiv.classList.add("newDiv");
+// Added styling for black border and pink background
+newDiv.style.border = "1px solid black";
+newDiv.style.backgroundColor = "pink";
 
+// Corrected the text content
 const title1 = document.createElement("h1");
 title1.classList.add("h1");
-title1.textContent = "I'm a div";
+title1.textContent = "I’m in a div";
 
-const paragraph2 = document.createElement("paragraph");
+// Corrected the tag name to "p"
+const paragraph2 = document.createElement("p");
 paragraph2.classList.add("paragraph2");
 paragraph2.textContent = "ME TOO";
 
+// Append title1 and paragraph2 to newDiv
 newDiv.appendChild(title1);
 newDiv.appendChild(paragraph2);
 
-
+// Append elements to container
 container.appendChild(content);
 container.appendChild(paragraph);
 container.appendChild(title3);
 container.appendChild(newDiv);
-
-
-
-
-
-
-
-
-
